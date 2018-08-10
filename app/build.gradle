@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /**
+     * 当需要建立一个arr或者jar库时候，尽量少依赖其他第三方库，可以不依赖都不依赖
+     * ，不然当其他项目使用该库的时候，有可能出现各种问题，比如依赖库版本冲突，重复依赖冲突等问题
+     */
+
+}
